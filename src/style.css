@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  /* use flexbox to create a verticle nav bar with a grey background with 40% occupancy */
+  display: flex;
+  flex-direction: column;
+  background-color: #f4f4f4;
+  width: 10%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px 0px 0px 0px;
+}
+
+nav li {
+  /* style the list items */
+  list-style: none;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+nav a {
+  /* style the links */
+  text-decoration: none;
+  color: #000;
+  padding: 10px 0;
+  text-align: center;
+  display: block;
+}
+
+nav a:hover {
+  /* style the links on hover */
+  background-color: #ccc;
+  width: 100%;
+}
