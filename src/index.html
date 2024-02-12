@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Meditation Timer</title>
     <link rel="stylesheet" href="style.css" />
     <script src="app.js" defer></script>
@@ -10,24 +11,34 @@
   <body>
     <header>
       <nav id="nav-bar">
-        <ul class="nav-links">
+        <ul>
           <!-- first list item will be an About Link  -->
-          <li><a href="#about">About</a></li>
-          <!-- Q: how do i get rid of the dot in the list item?
-          A: remove the bullet point from the list item
-          Q: how do i remove the bullet point?
-          A: use the list-style-type property and set it to none
-          Q: how do i remove the underline from the link?
-          A: use the text-decoration property and set it to none -->
-
+          <li onclick="{openModal()}">About</li>
           <!-- Second will be a link for donations  -->
-          <li><a href="#donate">Donate</a></li>
+          <li>Donate</li>
         </ul>
       </nav>
     </header>
+
+    <!-- Div for modal -->
+    <div class="modal">
+      <div id="about-content">
+        <span class="close-button" onclick="{closeModal()}">&times;</span>
+        <h2>About</h2>
+        <p>
+          This is a simple meditation timer that allows you to set a specific
+          time for your meditation session. It will play a sound when the time
+          is up. You can also set an interval for the sound to play at a
+          specific time during your meditation session.
+        </p>
+      </div>
+    </div>
+
     <main>
       <div id="container"></div>
-      <aside></aside>
     </main>
+
+    <aside></aside>
+    <footer></footer>
   </body>
 </html>
