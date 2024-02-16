@@ -4,7 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Meditation Timer</title>
-    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./css/navBar/style.css" />
+    <link rel="stylesheet" href="./css/mainContainer/style.css" />
+    <script
+      src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
     <script src="app.js" defer></script>
   </head>
 
@@ -35,7 +44,58 @@
     </div>
 
     <main>
-      <div id="container"></div>
+      <div id="main-container">
+        <header>
+          <h1>My meditation Timer</h1>
+        </header>
+
+        <div id="clock-container">
+          <div id="time-container">
+            <h2 id="timer">00:00:00</h2>
+            <input type="range" class="time-range" id="customRange" />
+          </div>
+          <button id="suggested-times">5</button>
+          <button id="suggested-times">10</button>
+          <button id="suggested-times">20</button>
+
+          <div id="add-delay">
+            <label for="delay">Add Delay</label>
+            <button class="add-button">+</button>
+          </div>
+
+          <div id="sound-options">
+            <h2>Sound Options</h2>
+            <div id="sound-options-container">
+              <input
+                type="button"
+                id="bell"
+                name="sound"
+                value="bell"
+                checked
+              />
+              <input type="button" id="gong" name="sound" value="gong" />
+              <input type="button" id="bowl" name="sound" value="bowl" />
+            </div>
+          </div>
+
+          <div id="interval-options">
+            <h2>Interval Options</h2>
+            <div id="add-interval">
+              <label for="interval">Add Interval</label>
+              <button class="add-button">+</button>
+            </div>
+
+            <div id="action-container">
+              <button id="action-button">Start</button>
+              <button id="action-button">pause</button>
+              <button id="action-button">reset</button>
+            </div>
+            <div>
+              <button id="action-button">Save Settings</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
 
     <aside></aside>

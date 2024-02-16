@@ -3,10 +3,6 @@
   margin: 0;
   padding: 0;
 }
-main {
-  display: flex;
-  justify-content: center;
-}
 
 nav {
   /* use flexbox to create a verticle nav bar with a grey background with 40% occupancy */
@@ -73,16 +69,6 @@ nav li:hover {
 .close-button:hover {
   /* style the close button on hover */
   background-color: #ccc;
-}
-
-/* Style for the main timer Component */
-#container {
-  display: flex;
-  align-items: center;
-  margin-top: 20vh;
-  height: 7rem;
-  width: 7rem;
-  background-color: blue;
 }
 
 @media all and (max-width: 769px) {
