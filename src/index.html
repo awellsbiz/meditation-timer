@@ -5,16 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Meditation Timer</title>
     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      href="//cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="./css/navBar/style.css" />
     <link rel="stylesheet" href="./css/mainContainer/style.css" />
+
     <script
       src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       defer
     ></script>
+
     <script src="app.js" defer></script>
+    <!-- <script src="/src/css/components/time-container.js" defer></script> -->
+    <script src="css/components/range-input.js" defer></script>
   </head>
 
   <body>
@@ -50,15 +54,22 @@
         </header>
 
         <div id="clock-container">
-          <div id="time-container">
-            <h2 id="timer">00:00:00</h2>
-            <input type="range" class="time-range" id="customRange" />
-          </div>
-          <button id="suggested-times">5</button>
-          <button id="suggested-times">10</button>
-          <button id="suggested-times">20</button>
+          <form id="time-container">
+            <h2 id="timer"></h2>
+            <input
+              type="range"
+              class="time-range"
+              id="customRange"
+              min="1"
+              max="30"
+              value="15"
+              step="1"
+            />
+            <button id="start-button" type="button">Start</button>
+            <button id="pause-button">Pause</button>
+          </form>
 
-          <div id="add-delay">
+          <!-- <div id="add-delay">
             <label for="delay">Add Delay</label>
             <button class="add-button">+</button>
           </div>
@@ -93,7 +104,7 @@
             <div>
               <button id="action-button">Save Settings</button>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </main>

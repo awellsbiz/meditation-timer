@@ -1,4 +1,4 @@
-// const aboutContent = document.getElementById('about-link');
+// Nav bar functions for links and modal
 
 function openModal() {
   const showModal = document.querySelector('.modal');
