@@ -1,20 +1,35 @@
 const slider = document.getElementById('customRange');
 const displayValue = document.getElementById('timer');
+const startButton = document.getElementById('start-button');
+const pauseButton = document.getElementById('pause-button');
+
+let timer;
+
+let totalSeconds;
+
+let state = {
+  isRunning: false,
+};
 
 document.addEventListener('DOMContentLoaded', () => {
-  const startButton = document.getElementById('start-button');
-
   displayValue.innerHTML = slider.value;
 
   //Update the display value when the slider is changes
 
   slider.oninput = function () {
     displayValue.innerHTML = this.value;
+    if (!state.isRunning) {
+      UpdateTimerDisplay(this.value * 60);
+    }
   };
 
   startButton.addEventListener('click', (e) => {
     e.preventDefault();
-    startTimer();
+    if (!state.isRunning) {
+      startTimer();
+    } else {
+      pauseTimer();
+    }
   });
 });
 
@@ -33,16 +48,40 @@ function UpdateTimerDisplay(totalSeconds) {
 // timer function
 
 function startTimer() {
-  // defining the starting minutes and seconds
-  let startingMinutes = slider.value;
-  let totalSeconds = startingMinutes * 60;
+  if (!state.isRunning) {
+    if (totalSeconds === undefined) {
+      totalSeconds = slider.value * 60;
+    }
+  }
+  // defining the starting seconds
 
   UpdateTimerDisplay(totalSeconds);
 
-  let timer = setInterval(() => {
+  timer = setInterval(() => {
     totalSeconds--;
     UpdateTimerDisplay(totalSeconds);
+
+    if (totalSeconds <= 0) {
+      clearInterval(timer);
+      state.isRunning = false;
+      startingMinutes = slider.value;
+    }
   }, 1000);
+
+  state.isRunning = true;
+  console.log(state.isRunning);
+  startButton.innerHTML = 'Pause';
 }
 
-// UpdateTimerDisplay();
+//pause function
+
+function pauseTimer() {
+  console.log(timer);
+  if (state.isRunning) {
+    clearInterval(timer);
+    state.isRunning = false;
+    startButton.innerHTML = 'Resume';
+  }
+}
+
+//add interval to timer
